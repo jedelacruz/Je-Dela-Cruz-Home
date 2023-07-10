@@ -117,3 +117,18 @@ container2.addEventListener('mouseleave', function() {
   eyeBox2.style.transition = 'transform 0.1s';
   eyeBox2.style.transform = 'translate(0, 0)';
 });
+
+let btn = $('#button');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
