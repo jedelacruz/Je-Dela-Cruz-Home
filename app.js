@@ -132,3 +132,11 @@ btn.on('click', function(e) {
   e.preventDefault();
   $('html, body').animate({scrollTop:0}, '300');
 });
+
+window.onload = () => {
+  const splashScreen = document.querySelector('.splash');
+  splashScreen.style.transform = 'translate(-50%, calc(-50% - 100vh))';
+  setTimeout(() => {
+    splashScreen.classList.add('hidden');
+  }, 2000);
+};
