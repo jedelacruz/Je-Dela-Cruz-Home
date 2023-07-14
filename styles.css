@@ -15,6 +15,32 @@
 body {
   background-color: black;
 }
+.splash{
+  position : fixed;
+  top : 50%;
+  left : 50%;
+  height : 100%;
+  width : 100%;
+  transform : translate(-50%,-50%);    
+  background-color: rgba(0,0,0);
+  transition : all ease-in-out 1500ms;
+  z-index: 10000;
+  
+}
+.hidden{
+  transition : 0.5s;
+  display : none;
+}
+.splash-header {
+  height : 100%;
+  color : white;
+  font-size : 3rem;
+  display : flex;
+  justify-content: center;
+  align-items : center;
+  font-family: "Rubik Mono One", sans-serif;
+  font-weight: lighter;
+}
 #button {
   display: inline-block;
   background-color: white;
