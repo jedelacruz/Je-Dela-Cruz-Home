@@ -15,31 +15,42 @@
 body {
   background-color: black;
 }
-.splash{
-  position : fixed;
-  top : 50%;
-  left : 50%;
-  height : 100%;
-  width : 100%;
-  transform : translate(-50%,-50%);    
-  background-color: rgba(0,0,0);
-  transition : all ease-in-out 1500ms;
-  z-index: 10000;
-  
+.intro{
+	position: fixed;
+	z-index: 10000;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100vh;
+	background-color: black;
+	transition: 1s;
 }
-.hidden{
-  transition : 0.5s;
-  display : none;
+
+.logo-header{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
 }
-.splash-header {
-  height : 100%;
-  color : white;
-  font-size : 3rem;
-  display : flex;
-  justify-content: center;
-  align-items : center;
-  font-family: "Rubik Mono One", sans-serif;
-  font-weight: lighter;
+
+.logo-text{
+	position: relative;
+	display: inline-block;
+	bottom: -20px;
+	opacity: 0;
+}
+
+.logo-text.active{
+	bottom: 0;
+	opacity: 1;
+	transition: ease-in-out 0.5s;
+}
+
+.logo-text.fade{
+	bottom: 0;
+	opacity: 0;
+	transition: ease-in-out 0.5s;
 }
 #button {
   display: inline-block;
