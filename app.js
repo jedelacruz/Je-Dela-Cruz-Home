@@ -133,10 +133,45 @@ btn.on('click', function(e) {
   $('html, body').animate({scrollTop:0}, '300');
 });
 
+let intro = document.querySelector('.intro');
+let logo = document.querySelector('.logo-header');
+let logoSpan = document.querySelectorAll('.logo-text');
+
 window.onload = () => {
-  const splashScreen = document.querySelector('.splash');
-  splashScreen.style.transform = 'translate(-50%, calc(-50% - 100vh))';
-  setTimeout(() => {
-    splashScreen.classList.add('hidden');
-  }, 2000);
+  let animationPlayed = sessionStorage.getItem('animationPlayed');
+
+  if (!animationPlayed) {
+    playAnimation();
+  } else {
+    intro.style.display = 'none';
+  }
 };
+
+function playAnimation() {
+  setTimeout(() => {
+    logoSpan.forEach((span, idx) => {
+      setTimeout(() => {
+        span.classList.add('active');
+      }, (idx + 1) * 400);
+    });
+
+    setTimeout(() => {
+      logoSpan.forEach((span, idx) => {
+        setTimeout(() => {
+          span.classList.remove('active');
+          span.classList.add('fade');
+        }, (idx + 1) * 50);
+      });
+    }, 2000);
+
+    setTimeout(() => {
+      intro.classList.add('move-up');
+    }, 2300);
+
+    setTimeout(() => {
+      intro.style.display = 'none';
+      sessionStorage.setItem('animationPlayed', true);
+    }, 3300);
+  });
+}
+
