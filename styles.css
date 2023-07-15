@@ -634,6 +634,18 @@ a:hover .cursor {
 #youtube-box{
   border-bottom: 5px solid #FF0000;
 }
+#linkedin-box{
+  border-bottom: 5px solid #0077B5;
+}
+#discord-box{
+  border-bottom: 5px solid #7289da;
+}
+#discord-box:hover .social-icon i {
+  color: #7289da;
+}
+#linkedin-box:hover .social-icon i {
+  color: #0077B5;
+}
 
 .social-links-box:hover .social-icon i {
   color: inherit;
